@@ -11,7 +11,6 @@ setup(
     author_email='yyb2020123@163.com',
     install_requires=[
         'pillow', 
-        "collections" ,
         "PIL",
         "numpy",
         "io",
