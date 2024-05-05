@@ -3,14 +3,20 @@
 from setuptools import setup, find_packages
 
 setup(
-    name='yybMotic',
+    name='moticreader',
     version='0.1',
     packages=find_packages(),
-    description='A package for managing Motic image pyramids',
+    description='A package for managing Motic image',
     author='yyb',
-    author_email='your_email@example.com',
+    author_email='yyb2020123@163.com',
     install_requires=[
-        'pillow',  # 如果你需要图像处理相关功能
+        'pillow', 
+        "collections" ,
+        "PIL",
+        "numpy",
+        "io",
+        "tifffile",
+        "olefile",
     ],
     python_requires='>=3.6',
 )

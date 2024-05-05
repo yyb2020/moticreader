@@ -116,26 +116,26 @@ class ImagePyramid:
         return None
 
     def save_as_tiff(self, filename):
-  
+   
         layers = [self.get_layer_image(level) for level in range(len(self.layers))]
 
+        
         base_image = layers[0]
+      
+        info = TiffImagePlugin.ImageFileDirectory_v2()
 
         info = TiffImagePlugin.ImageFileDirectory_v2()
 
         
-        info = TiffImagePlugin.ImageFileDirectory_v2()
+        info[282] = (self.micrometres_per_pixel_x, 1)  
+        info[283] = (self.micrometres_per_pixel_y, 1)  
+        info[296] = 3  
 
         
-        info[282] = (self.micrometres_per_pixel_x, 1)  # 282 is the tag for X_RESOLUTION
-        info[283] = (self.micrometres_per_pixel_y, 1)  # 283 is the tag for Y_RESOLUTION
-        info[296] = 3  # 296 is the tag for RESOLUTION_UNIT, 3
-
-       
-        info[270] = "Layer 0 Resolution: {}x{}".format(  # 270 is the tag for IMAGE_DESCRIPTION
+        info[270] = "Layer 0 Resolution: {}x{}".format(  
             self.micrometres_per_pixel_x, self.micrometres_per_pixel_y
         )
-    
+      
         base_image.save(
             filename,
             save_all=True,
