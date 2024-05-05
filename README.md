@@ -5,6 +5,6 @@ pma_python is a Python package that view and save the whole slide imaging and mi
 
 安装 Installation from source
 ---
-
+pip install moticreader
 
 
