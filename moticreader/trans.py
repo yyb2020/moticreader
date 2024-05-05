@@ -15,10 +15,6 @@ def get_tiles_for_level(level, group_index, grouped_data):
             return grouped_data[key]
     return None
 
-#olenn = olefile.OleFileIO("/home/Yangyb/data5/yunxing/deeplearning/3dnew/yssj/lung/1-1/1.mds")
-#streamnn = olenn.openstream(['DSI0', '0.017803', '0000_0000'])
-#image_datann = streamnn.read()
-#imagenn = Image.open(io.BytesIO(image_datann))
 
 
 def extract_scale_value(xml_data):

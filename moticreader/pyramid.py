@@ -116,27 +116,26 @@ class ImagePyramid:
         return None
 
     def save_as_tiff(self, filename):
-        # 创建一个列表来存储所有层的图像
+  
         layers = [self.get_layer_image(level) for level in range(len(self.layers))]
 
-        # 选择第一个图像作为基准图像
         base_image = layers[0]
-        # 创建TIFF信息字典
+
         info = TiffImagePlugin.ImageFileDirectory_v2()
 
-        # 设置分辨率和单位
+        
         info = TiffImagePlugin.ImageFileDirectory_v2()
 
-        # 设置分辨率和单位
+        
         info[282] = (self.micrometres_per_pixel_x, 1)  # 282 is the tag for X_RESOLUTION
         info[283] = (self.micrometres_per_pixel_y, 1)  # 283 is the tag for Y_RESOLUTION
         info[296] = 3  # 296 is the tag for RESOLUTION_UNIT, 3
 
-        # 可以选择性地添加描述信息，如下所示：
+       
         info[270] = "Layer 0 Resolution: {}x{}".format(  # 270 is the tag for IMAGE_DESCRIPTION
             self.micrometres_per_pixel_x, self.micrometres_per_pixel_y
         )
-        # 保存图像为多页BigTIFF
+    
         base_image.save(
             filename,
             save_all=True,
