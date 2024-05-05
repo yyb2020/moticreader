@@ -1,0 +1,8 @@
+[
+        'pillow', 
+        "PIL",
+        "numpy",
+        "io",
+        "tifffile",
+        "olefile",
+    ]
