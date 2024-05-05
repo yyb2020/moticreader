@@ -24,6 +24,11 @@ pyramid = readfile(path)
 layer_image = pyramid.get_layer_image(level = n)
 ```
 
+保存第n层（level）的图像 Save the image of level n
+```{python}
+layer_image.save(".../*.png", format='PNG')
+```
+
 整体保存为tiff格式图像 Save the entire image as tiff image
 ```{python}
 pyramid.save_as_tiff(".../*.tiff")
