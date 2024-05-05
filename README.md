@@ -12,19 +12,19 @@ pip install moticreader
 
 使用 How to use
 --
-读取.mds文件
+读取.mds文件 Read the .mds file
 ```{python}
 from moticreader import readfile
 path = ".../*.mds"
 pyramid = readfile(path)
 ```
 
-获得第n层（level）的图像
+获得第n层（level）的图像 Obtain the image of level n
 ```{python}
 layer_image = pyramid.get_layer_image(level = n)
 ```
 
-整体保存为tiff格式图像
+整体保存为tiff格式图像 Save the entire image as tiff image
 ```{python}
 pyramid.save_as_tiff(".../*.tiff")
 ```
